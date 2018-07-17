@@ -1,25 +1,16 @@
 import React,{Component} from 'react';
-import { StyleSheet, Text, View ,AppRegistry,ImageBackground} from 'react-native';
+import { StyleSheet, Text, View ,AppRegistry} from 'react-native';
 import { List, ListItem } from 'react-native-elements';
+import {Background} from './clases/Background';
 
 export default class App extends React.Component {
   render() {
     return (
-      <ImageBackground source={require('./app/img/prueba.jpg')} 
-          style={styles.container}>
-           <List containerStyle={{marginBottom: 20}}>
-        {
-          list.map((l, i) => (
-            <ListItem
-              roundAvatar
-              avatar={{uri:l.avatar_url}}
-              key={i}
-              title={l.name}
-            />
-          ))
-        }
-        </List>
-      </ImageBackground>
+      <Background>
+          <Text style={styles.letras}>
+            hola
+          </Text>
+      </Background>
     );
   }
 }
@@ -27,22 +18,24 @@ export default class App extends React.Component {
 
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'black',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  
   letras:{
     fontSize: 20,
     textAlign : 'center',
-    color : 'white',
+    color : 'black',
   },
    letritas:{
     fontSize: 15,
     textAlign : 'center',
     color : 'red',
   },
+   inner:{
+    width:'90%',
+    height : '90%',
+    backgroundColor : 'rgba(255,255,255, .7)'
+
+  }
+
   }
 );
 
