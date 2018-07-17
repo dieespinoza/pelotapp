@@ -1,11 +1,12 @@
 import React,{Component} from 'react';
-import { StyleSheet, Text, View ,AppRegistry} from 'react-native';
+import { StyleSheet, Text, View ,AppRegistry,ImageBackground} from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <ImageBackground source={require('./app/img/prueba.jpg')} 
+          style={styles.container}>
            <List containerStyle={{marginBottom: 20}}>
         {
           list.map((l, i) => (
@@ -17,8 +18,8 @@ export default class App extends React.Component {
             />
           ))
         }
-</List>
-      </View>
+        </List>
+      </ImageBackground>
     );
   }
 }
