@@ -1,26 +1,17 @@
 import React,{Component} from 'react';
 import { StyleSheet, Text, View ,AppRegistry} from 'react-native';
+import {Calendario } from './pibe_modules/calendar';
+import { Fecha } from './pibe_modules/picker';
 import { List, ListItem } from 'react-native-elements';
 
 export default class App extends React.Component {
   render() {
-    return (
-      <View style={styles.container}>
-           <List containerStyle={{marginBottom: 20}}>
-        {
-          list.map((l, i) => (
-            <ListItem
-              roundAvatar
-              avatar={{uri:l.avatar_url}}
-              key={i}
-              title={l.name}
-            />
-          ))
-        }
-</List>
-      </View>
-    );
-  }
+	return (
+		<View style={styles.container}>
+			<Fecha/>
+		</View>
+		);
+	}
 }
 
 
