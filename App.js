@@ -1,15 +1,24 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { ListItem } from 'react-native-elements'
+
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        list.map((l, i) => (
+        <ListItem
+        key={i}
+        leftAvatar={{ source: { uri: l.avatar_url } }}
+        title={l.name}
+        subtitle={l.subtitle}
+
+      />
+    ))
+        
       </View>
-    );
+    );  
   }
 }
 
@@ -21,3 +30,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+const list = [
+  {
+    name: 'Amy Farha',
+    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+    subtitle: 'Vice President'
+  },
+  {
+    name: 'Chris Jackson',
+    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+    subtitle: 'Vice Chairman'
+  }
+]
+
