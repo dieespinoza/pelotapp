@@ -1,23 +1,62 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React,{Component} from 'react';
+import { StyleSheet, Text, View ,AppRegistry} from 'react-native';
+import { List, ListItem } from 'react-native-elements';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+           <List containerStyle={{marginBottom: 20}}>
+        {
+          list.map((l, i) => (
+            <ListItem
+              roundAvatar
+              avatar={{uri:l.avatar_url}}
+              key={i}
+              title={l.name}
+            />
+          ))
+        }
+</List>
       </View>
     );
   }
 }
 
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+  letras:{
+    fontSize: 20,
+    textAlign : 'center',
+    color : 'white',
+  },
+   letritas:{
+    fontSize: 15,
+    textAlign : 'center',
+    color : 'red',
+  },
+  }
+);
+
+
+
+const list = [
+  {
+    name: 'Amy Farha',
+    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+    subtitle: 'Vice President'
+  },
+  {
+    name: 'Chris Jackson',
+    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+    subtitle: 'Vice Chairman'
+  }
+]
+
