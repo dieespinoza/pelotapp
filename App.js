@@ -1,35 +1,57 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { ListItem } from 'react-native-elements'
+
+import React,{Component} from 'react';
+import { StyleSheet, Text, View ,AppRegistry} from 'react-native';
+import { List, ListItem } from 'react-native-elements';
 
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        list.map((l, i) => (
-        <ListItem
-        key={i}
-        leftAvatar={{ source: { uri: l.avatar_url } }}
-        title={l.name}
-        subtitle={l.subtitle}
 
-      />
-    ))
-        
+           <List containerStyle={{marginBottom: 20}}>
+        {
+          list.map((l, i) => (
+            <ListItem
+              roundAvatar
+              avatar={{uri:l.avatar_url}}
+              key={i}
+              title={l.name}
+            />
+          ))
+        }
+</List>
+
       </View>
     );  
   }
 }
 
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+
+  letras:{
+    fontSize: 20,
+    textAlign : 'center',
+    color : 'white',
+  },
+   letritas:{
+    fontSize: 15,
+    textAlign : 'center',
+    color : 'red',
+  },
+  }
+);
+
+
+
 
 const list = [
   {
