@@ -5,22 +5,22 @@ import { StyleSheet, Text, View ,AppRegistry} from 'react-native';
 
 const list = [
   {
-    name: 'Amy Farha',
+    name: 'Julia Zapata',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-    subtitle: 'Vice President'
+    subtitle: 'Soccer 5 vs 5'
   },
   {
-    name: 'Chris Jackson',
+    name: 'Diego Espinoza',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman'
+    subtitle: 'Soccer 11 vs 11'
   }
 ]
 
-export  class ListMatch extends React.Component {
+export class ListMatch extends React.Component {
   render() {
     return (
       
-      <View style={{flex: 1,backgroundColor: 'lightblue'}}>
+      <View style={{flex: 1}}>
 
            <List  style={{flex: 1, backgroundColor: 'powderblue'}} >
         {
@@ -30,6 +30,7 @@ export  class ListMatch extends React.Component {
               avatar={{uri:l.avatar_url}}
               key={i}
               title={l.name}
+              subtitle={l.subtitle}
             />
           ))
         }
