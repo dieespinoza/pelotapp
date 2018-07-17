@@ -1,5 +1,6 @@
-import { ListItem } from 'react-native-elements'
-
+import { List, ListItem } from 'react-native-elements';
+import React,{Component} from 'react';
+import { StyleSheet, Text, View ,AppRegistry} from 'react-native';
 
 
 const list = [
@@ -15,15 +16,28 @@ const list = [
   }
 ]
 
-<View>
-  {
-    list.map((l, i) => (
-      <ListItem
-        key={i}
-        leftAvatar={{ source: { uri: l.avatar_url } }}
-        title={l.name}
-        subtitle={l.subtitle}
-      />
-    ))
+export  class ListMatch extends React.Component {
+  render() {
+    return (
+      
+      <View style={{flex: 1,backgroundColor: 'lightblue'}}>
+
+           <List  style={{flex: 1, backgroundColor: 'powderblue'}} >
+        {
+          list.map((l, i) => (
+            <ListItem
+              roundAvatar
+              avatar={{uri:l.avatar_url}}
+              key={i}
+              title={l.name}
+            />
+          ))
+        }
+</List>
+
+      </View>
+    );  
   }
-</View>
+}
+
+export default  {ListMatch}
