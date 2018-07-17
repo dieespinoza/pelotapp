@@ -12,7 +12,7 @@ export default class App extends React.Component {
      <ImageBackground source={require('./app/img/prueba.jpg')} 
           style={styles.container}>
           <View style={styles.inner}>
-          	<ListMatch></ListMatch>
+          	<ListMatch/>
 
           </View>
 
