@@ -1,31 +1,49 @@
 
 import React,{Component} from 'react';
-import { StyleSheet, Text, View ,AppRegistry,ImageBackground} from 'react-native';
+import { StyleSheet, Text, View ,AppRegistry,ImageBackground,Button} from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 import { ListMatch } from './pibe_modules/list_match';
+import { createStackNavigator } from 'react-navigation';
 
-
-export default class App extends React.Component {
+class HomeScreen extends React.Component {
   render() {
     return (
 
-     <ImageBackground source={require('./app/img/prueba.jpg')} 
+    	   <ImageBackground source={require('./app/img/prueba.jpg')} 
           style={styles.container}>
-          <View style={styles.inner}>
-          	<ListMatch/>
-
-          </View>
+           <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Pibe</Text>
+        <Button
+          title="Go to Details"
+          onPress={() => this.props.navigation.navigate('ListMatch')}
+        />
+      </View>
 
       
       </ImageBackground>
-    );  
+
+      
+     
+    );
   }
 }
 
 
 
+const RootStack = createStackNavigator(
+  {
+    Home: HomeScreen,
+    ListMatch: ListMatch,
+  },
+  {
+    initialRouteName: 'Home',
+  }
+);
 
-
+export default class App extends React.Component {
+  render() {
+    return <RootStack />;
+  }}
 
 const styles = StyleSheet.create({
   container: {

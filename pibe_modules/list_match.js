@@ -20,9 +20,9 @@ export class ListMatch extends React.Component {
   render() {
     return (
       
-      <View style={{flex: 1}}>
+      <View style={{flex: 2}}>
 
-           <List  style={{flex: 1, backgroundColor: 'powderblue'}} >
+           <List  style={{flex: 2, backgroundColor: 'powderblue'}} >
         {
           list.map((l, i) => (
             <ListItem
