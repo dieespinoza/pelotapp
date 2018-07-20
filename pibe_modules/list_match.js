@@ -1,7 +1,7 @@
 import { List, ListItem } from 'react-native-elements';
-import React,{Component} from 'react';
-import { StyleSheet, Text, View ,AppRegistry} from 'react-native';
-import {  createStackNavigator,} from 'react-navigation';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, AppRegistry } from 'react-native';
+import { createStackNavigator, } from 'react-navigation';
 
 const list = [
   {
@@ -19,26 +19,26 @@ const list = [
 export class ListMatch extends React.Component {
   render() {
     return (
-      
-      <View style={{flex: 2}}>
 
-           <List  style={{flex: 2, backgroundColor: 'powderblue'}} >
-        {
-          list.map((l, i) => (
-            <ListItem
-              roundAvatar
-              avatar={{uri:l.avatar_url}}
-              key={i}
-              title={l.name}
-              subtitle={l.subtitle}
-            />
-          ))
-        }
-</List>
+      <View style={{ flex: 1 }}>
+
+        <List style={{ flex: 1, backgroundColor: 'powderblue' }} >
+          {
+            list.map((l, i) => (
+              <ListItem
+                roundAvatar
+                avatar={{ uri: l.avatar_url }}
+                key={i}
+                title={l.name}
+                subtitle={l.subtitle}
+              />
+            ))
+          }
+        </List>
 
       </View>
-    );  
+    );
   }
 }
 
-export default  {ListMatch}
+export default { ListMatch }
