@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import { StyleSheet, Text, View ,AppRegistry} from 'react-native';
+import { StyleSheet, Text, View ,AppRegistry,ImageBackground} from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 import {Background} from './clases/Background';
 
@@ -7,9 +7,14 @@ export default class App extends React.Component {
   render() {
     return (
       <Background>
+        <View style={styles.inner}>
           <Text style={styles.letras}>
-            hola
+            Si funcionono
+                      </Text>
+          <Text style={styles.letritas}>
+          Probando esta cosa
           </Text>
+          </View>
       </Background>
     );
   }
@@ -18,21 +23,30 @@ export default class App extends React.Component {
 
 
 const styles = StyleSheet.create({
+   container: {
+    flex: 1,
+    backgroundColor: 'black',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   
   letras:{
     fontSize: 20,
     textAlign : 'center',
-    color : 'black',
+    color : 'red',
   },
    letritas:{
     fontSize: 15,
     textAlign : 'center',
     color : 'red',
+
   },
    inner:{
-    width:'90%',
-    height : '90%',
-    backgroundColor : 'rgba(255,255,255, .7)'
+    justifyContent: 'center',
+    alignItems:'center',
+    width:'95%',
+    height : '95%',
+    backgroundColor : 'rgba(0,0,0, .7)'
 
   }
 
