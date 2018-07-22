@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import { StyleSheet, Text, View ,AppRegistry,ImageBackground} from 'react-native';
 import { List, ListItem } from 'react-native-elements';
-import {Background} from './clases/Background';
+import {Background} from './src/components/Background';
 
 export default class App extends React.Component {
   render() {

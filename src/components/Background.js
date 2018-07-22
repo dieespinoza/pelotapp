@@ -7,23 +7,32 @@ import { StyleSheet, Text, View ,AppRegistry,ImageBackground } from 'react-nativ
 export class Background extends React.Component{
 	render(){
 		return(
-			<ImageBackground source = {require('../app/img/prueba.jpg')}
+			<ImageBackground source = {require('../../app/img/prueba.jpg')}
 				style={{width:'100%', height:'100%',alignItems:'center',justifyContent:'center'}}>
 	
 			{this.props.children}
+			<View style={styles.barra}>
+			<Text style={styles.button}>QUE SUCEDE</Text>
+			</View>
 			</ImageBackground>
 
 			);
 	}
 }
-// const styles = StyleSheet.create({
-//     backgroundImage: {
-//         flex: 1,
-//         width: null,
-//         height: null,
-//         resizeMode: 'cover'
-//     }
-// });
+ const styles = StyleSheet.create({
+    barra: {
+        flexDirection : 'row',
+        justifyContent:'center',
+    },
+    button:{
+    	width:100,
+    	height:30,
+    	backgroundColor:'blue',
+    	alignItems:'center',
+    	marginBottom:0,
+    }
+
+});
 
 
 // const styles = StyleSheet.create({
